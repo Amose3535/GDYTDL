@@ -33,17 +33,35 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -83.0
-offset_top = 62.0
+offset_top = 60.0
 offset_right = 83.0
-offset_bottom = 91.0
+offset_bottom = 89.0
 grow_horizontal = 2
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/mono_font_size = 20
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 20
-theme_override_font_sizes/italics_font_size = 20
-theme_override_font_sizes/bold_italics_font_size = 20
-theme_override_font_sizes/mono_font_size = 20
 bbcode_enabled = true
 text = "Status: [color=red][b]LOADING[/b][/color]"
+
+[node name="Status2" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -45.0
+offset_top = 90.0
+offset_right = 47.0
+offset_bottom = 122.0
+grow_horizontal = 2
+theme_override_font_sizes/bold_italics_font_size = 10
+theme_override_font_sizes/italics_font_size = 10
+theme_override_font_sizes/mono_font_size = 10
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 10
+bbcode_enabled = true
+text = "[p align = center][color=orange]Note:[/color] First few loads take a while[/p]"
 
 [node name="URL_Field" type="LineEdit" parent="."]
 layout_mode = 1
@@ -146,3 +164,5 @@ offset_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Download as audio"
+
+[connection signal="pressed" from="Video_Download" to="." method="_on_video_download_pressed"]
