@@ -1,0 +1,160 @@
+[gd_scene load_steps=2 format=3 uid="uid://di81uk4hno3yh"]
+
+[ext_resource type="Script" path="res://Scripts/MainView.gd" id="1_1jwra"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1jwra")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_top = 11.0
+offset_right = 180.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Godot YouTube Downdoader"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status" type="RichTextLabel" parent="."]
+layout_mode = 1
+offset_left = 14.0
+offset_top = 51.0
+offset_right = 800.0
+offset_bottom = 80.0
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/mono_font_size = 20
+bbcode_enabled = true
+text = "Status: [color=red][b]LOADING[/b][/color]"
+
+[node name="Status2" type="RichTextLabel" parent="."]
+layout_mode = 1
+offset_left = 14.0
+offset_top = 88.0
+offset_right = 346.0
+offset_bottom = 112.0
+theme_override_font_sizes/normal_font_size = 15
+theme_override_font_sizes/bold_font_size = 15
+theme_override_font_sizes/italics_font_size = 15
+theme_override_font_sizes/bold_italics_font_size = 15
+theme_override_font_sizes/mono_font_size = 15
+bbcode_enabled = true
+text = "[p align = center][color=orange]Note:[/color] Be patient! First few loads take a while.[/p]"
+
+[node name="URL_Field" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -212.5
+offset_top = 159.0
+offset_right = 212.5
+offset_bottom = 190.0
+grow_horizontal = 2
+placeholder_text = "E.g.: https://www.youtube.com/watch?v=XXXXXXXXXXX"
+
+[node name="URL_Label" type="Label" parent="URL_Field"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -212.5
+offset_top = -30.0
+offset_right = 212.5
+offset_bottom = -7.0
+grow_horizontal = 2
+text = "URL:"
+
+[node name="Download_Field" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -212.5
+offset_top = 254.0
+offset_right = 212.5
+offset_bottom = 285.0
+grow_horizontal = 2
+placeholder_text = "E.g.: C:\\Users\\username\\Downloads"
+
+[node name="Download_Label" type="Label" parent="Download_Field"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -212.5
+offset_top = -30.0
+offset_right = 212.5
+offset_bottom = -7.0
+grow_horizontal = 2
+text = "Download directory:"
+
+[node name="Download_Name" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -212.5
+offset_top = 351.0
+offset_right = 212.5
+offset_bottom = 382.0
+grow_horizontal = 2
+placeholder_text = "E.g.: my_file                   (MUST NOT CONTAIN: ',\",/,.,%,$)"
+
+[node name="Download_Label" type="Label" parent="Download_Name"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -212.5
+offset_top = -30.0
+offset_right = 212.5
+offset_bottom = -7.0
+grow_horizontal = 2
+text = "File name:"
+
+[node name="Video_Download" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.0
+offset_top = 34.0
+offset_right = -58.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Download as video"
+
+[node name="Audio_Download" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 57.0
+offset_top = 33.0
+offset_right = 213.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Download as audio"
+
+[connection signal="pressed" from="Video_Download" to="." method="_on_video_download_pressed"]
